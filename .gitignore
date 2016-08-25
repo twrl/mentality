@@ -1,0 +1,6 @@
+.c9
+node_modules
+src/server/_replicator
+src/server/_users
+src/server/pouch__all_dbs__
+src/server/userdata

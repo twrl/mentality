@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mentality</title>
+        <meta content="text/html" charset="utf-8"/>
+        <link rel="manifest" href="app.webmanifest"/>
+        
+        <!-- These are temporary for devlopment -->
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="pragma" content="no-cache">
+
+        
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        
+        <link rel="stylesheet" href="css/fontawesome.css"/>
+        <link rel="stylesheet" href="css/main.css"/>
+        
+        <script src="js/vendor/require.js"></script>
+        <script>
+            require.config({
+                baseUrl: 'js',
+                map: {
+                    '*': {
+                        'async': 'vendor/async',
+                        'backbone': 'vendor/backbone',
+                        'css': 'vendor/css',
+                        'domReady': 'vendor/domReady',
+                        'font': 'vendor/font',
+                        'goog': 'vendor/goog',
+                        'jsonld': 'vendor/jsonld',
+                        'pouchdb': 'vendor/pouchdb',
+                        'propertyParser': 'vendor/propertyParser',
+                        'q': 'vendor/q',
+                        'text': 'vendor/text',
+                        'tpl': 'vendor/tpl',
+                        'underscore': 'vendor/underscore',
+                        'worker-pouch': 'vendor/worker-pouch',
+                        'zanimo': 'vendor/zanimo',
+                        'zepto': 'vendor/zepto'
+                    }
+                },
+                deps: [
+                    'font!google,families:[Pontano Sans]',
+                    'main'
+                    ]
+            });
+        </script>
+    </head>
+    <body>
+        
+        <div id="mentality-splash" class="ui-page" role="application" aria-hidden="false">
+            <p><i class="fa fa-user" style="font-size: 8em" aria-hidden="true"></i></p>
+            <p>Mentality</p>
+        </div>
+        
+        <div id="mentality-dash" class="ui-page" role="application" aria-hidden="false">
+            <div class="ui-toolbar">
+                <div class="ui-tb-btn-left"><i class="fa fa-user" aria-hidden="true"></i><span>Mentality</span></div>
+                <div class="ui-tb-btn-right" id="tb-btn-settings"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+            </div>
+            <div class="ui-content">
+                <div class="ui-dash-widget ui-grp-selfcare"><p>Thought Diary</p><i class="fa fa-book" aria-hidden="true"></i></div>
+                <div class="ui-dash-widget ui-grp-selfcare"><p>Concerns</p><i class="fa fa-question" aria-hidden="true"></i></div>
+                <div class="ui-dash-widget ui-grp-selfcare"><p>My Story</p><i class="fa fa-pencil-square" aria-hidden="true"></i></div>
+                
+                <div class="ui-dash-widget ui-grp-clinical"><p>Medication</p><i class="fa fa-medkit" aria-hidden="true"></i></div>
+                <div class="ui-dash-widget ui-grp-clinical"><p>Appointments</p><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                <div class="ui-dash-widget ui-grp-clinical"><p>Health Contacts</p><i class="fa fa-user-md" aria-hidden="true"></i></div>
+                
+                <div class="ui-dash-widget ui-grp-useful" id="dash-btn-information"><p>Information</p><i class="fa fa-info" aria-hidden="true"></i></div>
+                <div class="ui-dash-widget ui-grp-useful"><p>Inspiration</p><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+                <div class="ui-dash-widget ui-grp-useful" id="dash-btn-emergencykitten"><p>Emergency Kitten</p><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+                
+                
+                <div class="ui-dash-widget ui-grp-crisis"><p>Crisis Plan</p><i class="fa fa-life-ring" aria-hidden="true"></i></div>
+                <div class="ui-dash-widget ui-grp-crisis" id="dash-btn-gethelp"><p>Get Help</p><i class="fa fa-volume-control-phone" aria-hidden="true"></i></div>
+            </div>
+        </div>
+        
+        <div id="settings" class="ui-page" role="application" aria-hidden="false">
+            <div class="ui-toolbar">
+                <div class="ui-tb-btn-left"><i class="fa fa-user" aria-hidden="true"></i><span>Mentality</span></div>
+            </div>
+            <div class="ui-content">
+                <p>Settings pane</p>
+            </div>
+        </div>
+        
+        <div id="gethelp" class="ui-page" role="application" aria-hidden="false">
+            <div class="ui-toolbar">
+                <div class="ui-tb-btn-left"><i class="fa fa-user" aria-hidden="true"></i><span>Mentality</span></div>
+            </div>
+            <div class="ui-content">
+                <div class="ui-gethelp-widget">
+                    <h3>Samaritans</h3>
+                    <p>Talk about what's bothering you</p>
+                    <a href="tel:116123"><i class="fa fa-phone-square"></i></a><a href="mailto:jo@samaritans.org"><i class="fa fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div id="information" class="ui-page" role="application" aria-hidden="false">
+            <div class="ui-toolbar">
+                <div class="ui-tb-btn-left"><i class="fa fa-user" aria-hidden="true"></i><span>Mentality</span></div>
+            </div>
+            <div class="ui-content">
+                <p>Information...</p>
+            </div>
+        </div>
+        
+    </body>
+</html>

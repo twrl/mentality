@@ -1,0 +1,17 @@
+{
+  "name": "mentality",
+  "version": "1.0.0",
+  "description": "Mental Health App",
+  "main": "src/server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tom Robbins",
+  "license": "EUPL-1.1",
+  "dependencies": {
+    "amdefine": "^1.0.0",
+    "express": "^4.14.0",
+    "express-pouchdb": "^1.0.7",
+    "pouchdb": "^5.4.5"
+  }
+}
