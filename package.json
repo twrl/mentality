@@ -12,6 +12,10 @@
     "amdefine": "^1.0.0",
     "express": "^4.14.0",
     "express-pouchdb": "^1.0.7",
+    "joey": "^1.5.1",
     "pouchdb": "^5.4.5"
+  },
+  "devDependencies": {
+    "bower": "^1.7.9"
   }
 }

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mentality</title>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="manifest" href="/manifest.json"/>
+    
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="vendor/materialize/dist/css/materialize.css" />
+    <link rel="stylesheet" href="css/pages.css"/>
+
+    <script src="vendor/q/q.js"></script>
+    <script src="vendor/system.js/dist/system.js"></script>
+    <script src="js/system.config.js"></script>
+    <script>
+        /*System.import("/js/system.config.js");*/
+        /*global navigator*/
+        navigator.serviceWorker.register("/services.js");
+        System.import("materialize");
+        
+        System.import("components/mvvm.js");
+        
+        System.import("dexie.schema.js").then(function(db) {
+            System.import("rivets").then(function(rivets) {
+                
+            });
+        });
+        
+        System.import("jquery").then(function($){
+            $(function () {
+                $("#ui-dash-btn-thoughtdiary").on("click", function () { window.open("#pg-thoughtdiary", "_self"); });
+                $("#ui-dash-btn-concerns").on("click", function () { window.open("#pg-concerns", "_self"); });
+                $("#ui-dash-btn-emergencykitten").on("click", function () { window.open("http://emergencykitten.com", "_blank"); });
+                $("#ui-dash-btn-gethelp").on("click", function() { window.open("#pg-gethelp", "_self"); });
+                
+                System.import("dexie.schema.js").then(function(db) {
+                    System.import("rivets.ext.js").then(function(rivets) {
+                        
+                        // rivets.formatters.url_mailto = function (value) {
+                        //     return "mailto:" + value;
+                        // };
+                        // rivets.formatters.url_tel = function (value) {
+                        //     return "tel:" + value;
+                        // };
+                        // rivets.formatters.url_sms = function (value) {
+                        //     return "sms:" + value;
+                        // };
+                        
+                        db.helpsvcs.toArray().then(function (hs) {
+                            var $row = $("#pg-gethelp .row");
+                            rivets.bind($row, { helpsvcs: hs });
+                        });
+                        
+                    });
+                });
+                
+            });
+        });
+        
+        if (window.location.hash.length < 2) {
+            window.open("#pg-dash", "_self");
+        }
+    </script>
+    <style>
+        html {
+            font-family: "Pontano Sans", "Roboto", sans-serif;
+        }
+        nav .brand-logo {
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        
+        
+    </style>
+</head>
+
+<body class="green lighten-5">
+
+    <div class="page" id="pg-dash">
+
+    <div class="navbar-fixed">
+        <nav class="green">
+            <div class="nav-wrapper">
+                <a href="#pg-dash" class="brand-logo left">Mentality</a>
+                <ul class="right">
+                    <li><a href="#"><i class="fa fa-cog"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="section">
+            <h6>Self Care</h6>
+            <div class="row">
+                <div class="col s6 m4 l2">
+                    <div id="ui-dash-btn-thoughtdiary" class="card teal">
+                        <div class="card-content white-text">
+                            Thought Diary
+                        </div>
+                    </div>
+                </div>
+                <div id="ui-dash-btn-concerns" class="col s6 m4 l2">
+                    <div class="card teal">
+                        <div class="card-content white-text">
+                            Concerns
+                        </div>
+                    </div>
+                </div>
+                <div class="col s6 m4 l2">
+                    <div class="card teal">
+                        <div class="card-content white-text">
+                            My Story
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+            <h6>Treatment</h6>
+            <div class="row">
+                <div class="col s6 m4 l2">
+                    <div class="card orange lighten-2">
+                        <div class="card-content white-text">
+                            Health Contacts
+                        </div>
+                    </div>
+                </div>
+                <div class="col s6 m4 l2">
+                    <div class="card orange lighten-2">
+                        <div class="card-content white-text">
+                            Appointments
+                        </div>
+                    </div>
+                </div>
+                <div class="col s6 m4 l2">
+                    <div class="card orange lighten-2">
+                        <div class="card-content white-text">
+                            Medication
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+            <h6>Resources</h6>
+            <div class="row">
+                <div class="col s6 m4 l2">
+                    <div class="card light-green">
+                        <div class="card-content white-text">
+                            Information
+                        </div>
+                    </div>
+                </div>
+            <div class="col s6 m4 l2">
+                <div id="ui-dash-btn-emergencykitten" class="card light-green">
+                    <div class="card-content white-text">
+                        Emergency Kitten
+                    </div>
+                </div>
+            </div>
+            <div class="col s6 m4 l2">
+                <div class="card light-green">
+                    <div class="card-content white-text">
+                        Get Inspiration
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+            <h6>Crisis</h6>
+            <div class="row">
+                <div class="col s6 m4 l2">
+                    <div id="ui-dash-btn-gethelp" class="card red darken-3">
+                        <div class="card-content white-text">
+                            Get Help
+                        </div>
+                    </div>
+                </div>
+                <div class="col s6 m4 l2">
+                    <div class="card red darken-3">
+                        <div class="card-content white-text">
+                            Crisis Plan
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <div class="page" id="pg-concerns">
+        <div class="navbar-fixed">
+        <nav class="green">
+            <div class="nav-wrapper">
+                <a href="#pg-dash" class="brand-logo left">Mentality</a>
+                <ul class="right">
+                    <li><a href="#"><i class="fa fa-cog"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+        <div class="container">
+        
+        </div>
+    </div>
+    
+    <div class="page" id="pg-thoughtdiary">
+        <div class="navbar-fixed">
+        <nav class="green">
+            <div class="nav-wrapper">
+                <a href="#pg-dash" class="brand-logo left">Mentality</a>
+                <ul class="right">
+                    <li><a href="#"><i class="fa fa-cog"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+        <div class="container" style="height: 100%; overflow-y: scroll;">
+        
+        </div>
+        
+        <div class="fixed-action-btn" style="bottom: 45px; right: 24px; z-index: 1001;">
+            <a class="btn-floating btn-large red waves-effect waves-light"><i class="large fa fa-bars"></i></a>
+            <ul>
+                <li><a class="btn-floating blue lighten-1 waves-effect waves-light"><i class="fa fa-pencil"></i></a></li>
+                <li><a class="btn-floating yellow waves-effect waves-light"><i class="fa fa-meh-o"></i></a></li>
+                <li><a class="btn-floating green waves-effect waves-light"><i class="fa fa-puzzle-piece"></i></a></li>
+            </ul>
+        </div>    
+        
+    </div>
+
+    <div class="page" id="pg-gethelp">
+        <div class="navbar-fixed">
+        <nav class="green">
+            <div class="nav-wrapper">
+                <a href="#pg-dash" class="brand-logo left">Mentality</a>
+                <ul class="right">
+                    <li><a href="#"><i class="fa fa-cog"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div rv-each-service="helpsvcs" class="col s12 m6 l4">
+                    <div class="card red darken-3">
+                        <div class="card-content white-text">
+                            <span class="card-title">{ service.name }</span>
+                            <p>{ service.description }</p>
+                        </div>
+                        <div class="card-action">
+                            <a rv-if="service.tel" rv-href="service.tel | url_tel"><i class="fa fa-phone"></i> Call</a>
+                            <a rv-if="service.sms" rv-href="service.sms | url_sms"><i class="fa fa-comments"></i> Text</a>
+                            <a rv-if="service.email" rv-href="service.email | url_mailto"><i class="fa fa-envelope"></i> Email</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+</body>
+
+</html>

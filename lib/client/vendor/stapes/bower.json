@@ -1,0 +1,9 @@
+{
+    "name": "stapes",
+    "main": "./stapes.js",
+    "keywords": [
+        "mvc", "framework", "lightweight", "base", "events", "class", "data",
+        "server", "client", "browser"
+    ],
+    "ignore" : ["examples", "scripts", "test", "web-assets", "*.html", "*.md"]
+}

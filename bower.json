@@ -1,0 +1,34 @@
+{
+  "name": "mentality",
+  "description": "Mental Health App",
+  "main": "src/server/index.js",
+  "authors": [
+    "Tom Robbins"
+  ],
+  "license": "EUPL-1.1",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib/client/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "dexie": "^1.4.1",
+    "materialize": "^0.97.7",
+    "rivets": "^0.9.4",
+    "system.js": "^0.19.37",
+    "font-awesome": "^4.6.3",
+    "catiline": "^2.9.3",
+    "sw-toolbox": "^3.2.1",
+    "lodash-amd": "^3.10.2",
+    "stapes": "^1.0.0",
+    "q": "1.4.1"
+  },
+  "resolutions": {
+    "q": "1.4.1"
+  }
+}

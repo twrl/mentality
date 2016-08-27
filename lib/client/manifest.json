@@ -1,0 +1,14 @@
+{
+    "name": "Mentality",
+    "short_name": "Mentality",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#4CAF50",
+    "theme_color": "#4CAF50",
+    "icons": [
+        {
+            "src": "/mentality-icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }]
+}
