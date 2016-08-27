@@ -24,6 +24,8 @@
         
         System.import("components/mvvm.js");
         
+        System.import("pages/gethelp.js");
+        
         System.import("dexie.schema.js").then(function(db) {
             System.import("rivets").then(function(rivets) {
                 
@@ -35,28 +37,27 @@
                 $("#ui-dash-btn-thoughtdiary").on("click", function () { window.open("#pg-thoughtdiary", "_self"); });
                 $("#ui-dash-btn-concerns").on("click", function () { window.open("#pg-concerns", "_self"); });
                 $("#ui-dash-btn-emergencykitten").on("click", function () { window.open("http://emergencykitten.com", "_blank"); });
-                $("#ui-dash-btn-gethelp").on("click", function() { window.open("#pg-gethelp", "_self"); });
+                // $("#ui-dash-btn-gethelp").on("click", function() { window.open("#pg-gethelp", "_self"); });
                 
-                System.import("dexie.schema.js").then(function(db) {
-                    System.import("rivets.ext.js").then(function(rivets) {
+                // System.import("dexie.schema.js").then(function(db) {
+                //     // System.import("rivets.ext.js").then(function(rivets) {
                         
-                        // rivets.formatters.url_mailto = function (value) {
-                        //     return "mailto:" + value;
-                        // };
-                        // rivets.formatters.url_tel = function (value) {
-                        //     return "tel:" + value;
-                        // };
-                        // rivets.formatters.url_sms = function (value) {
-                        //     return "sms:" + value;
-                        // };
                         
-                        db.helpsvcs.toArray().then(function (hs) {
-                            var $row = $("#pg-gethelp .row");
-                            rivets.bind($row, { helpsvcs: hs });
-                        });
                         
-                    });
-                });
+                //     //     db.helpsvcs.toArray().then(function (hs) {
+                //     //         var $row = $("#pg-gethelp .row");
+                //     //         rivets.bind($row, { helpsvcs: hs });
+                //     //     });
+                        
+                //     // });
+                    
+                //     System.import("components/mvvm.js").then(function (rivets) {
+                //         db.helpsvcs.toArray().then(function (hs) {
+                //             var $row = $("#pg-gethelp .row");
+                //             rivets.bind($row, { helpsvcs: hs });
+                //         });
+                //     });
+                // });
                 
             });
         });
@@ -252,7 +253,8 @@
         <div class="container">
             <div class="row">
                 <div rv-each-service="helpsvcs" class="col s12 m6 l4">
-                    <div class="card red darken-3">
+                    <helpsvcs-card item="service"></helpsvcs-card>
+                    <!--div class="card red darken-3">
                         <div class="card-content white-text">
                             <span class="card-title">{ service.name }</span>
                             <p>{ service.description }</p>
@@ -262,7 +264,7 @@
                             <a rv-if="service.sms" rv-href="service.sms | url_sms"><i class="fa fa-comments"></i> Text</a>
                             <a rv-if="service.email" rv-href="service.email | url_mailto"><i class="fa fa-envelope"></i> Email</a>
                         </div>
-                    </div>
+                    </div-->
                     
                 </div>
             </div>
