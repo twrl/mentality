@@ -22,15 +22,15 @@
         navigator.serviceWorker.register("/services.js");
         System.import("materialize");
         
-        System.import("components/mvvm.js");
+        System.import("main.js");
+        
+        System.import("prepopulate.js");
         
         System.import("pages/gethelp.js");
+        System.import("pages/healthcontacts.js");
+        System.import("pages/appointments.js");
         
-        System.import("dexie.schema.js").then(function(db) {
-            System.import("rivets").then(function(rivets) {
-                
-            });
-        });
+        
         
         System.import("jquery").then(function($){
             $(function () {
@@ -39,32 +39,12 @@
                 $("#ui-dash-btn-emergencykitten").on("click", function () { window.open("http://emergencykitten.com", "_blank"); });
                 // $("#ui-dash-btn-gethelp").on("click", function() { window.open("#pg-gethelp", "_self"); });
                 
-                // System.import("dexie.schema.js").then(function(db) {
-                //     // System.import("rivets.ext.js").then(function(rivets) {
-                        
-                        
-                        
-                //     //     db.helpsvcs.toArray().then(function (hs) {
-                //     //         var $row = $("#pg-gethelp .row");
-                //     //         rivets.bind($row, { helpsvcs: hs });
-                //     //     });
-                        
-                //     // });
-                    
-                //     System.import("components/mvvm.js").then(function (rivets) {
-                //         db.helpsvcs.toArray().then(function (hs) {
-                //             var $row = $("#pg-gethelp .row");
-                //             rivets.bind($row, { helpsvcs: hs });
-                //         });
-                //     });
-                // });
+
                 
             });
         });
         
-        if (window.location.hash.length < 2) {
-            window.open("#pg-dash", "_self");
-        }
+        
     </script>
     <style>
         html {
@@ -125,14 +105,14 @@
             <h6>Treatment</h6>
             <div class="row">
                 <div class="col s6 m4 l2">
-                    <div class="card orange lighten-2">
+                    <div id="ui-dash-btn-healthcontacts" class="card orange lighten-2">
                         <div class="card-content white-text">
                             Health Contacts
                         </div>
                     </div>
                 </div>
                 <div class="col s6 m4 l2">
-                    <div class="card orange lighten-2">
+                    <div id="ui-dash-btn-appointments" class="card orange lighten-2">
                         <div class="card-content white-text">
                             Appointments
                         </div>
@@ -271,6 +251,49 @@
         </div>
     </div>
 
+    <div class="page" id="pg-healthcontacts">
+        <div class="navbar-fixed">
+        <nav class="green">
+            <div class="nav-wrapper">
+                <a href="#pg-dash" class="brand-logo left">Mentality</a>
+                <ul class="right">
+                    <li><a href="#" id="ui-healthcontacts-btn-add"><i class="fa fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div rv-each-contact="healthcontacts" class="col s12 m6 l4">
+                    <healthcontacts-card item="contact"></healthcontacts-card>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page" id="pg-appointments">
+        <div class="navbar-fixed">
+        <nav class="green">
+            <div class="nav-wrapper">
+                <a href="#pg-dash" class="brand-logo left">Mentality</a>
+                <ul class="right">
+                    <li><a href="#" id="ui-appointments-btn-add"><i class="fa fa-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div rv-each-appointment="appointments" class="col s12 m6 l4">
+                    <appointment-card item="appointment"></appointment-card>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
     
 
 </body>
