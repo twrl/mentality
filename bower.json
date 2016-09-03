@@ -24,13 +24,10 @@
     "font-awesome": "^4.6.3",
     "catiline": "^2.9.3",
     "sw-toolbox": "^3.2.1",
-    "lodash-amd": "^3.10.2",
     "stapes": "^1.0.0",
     "q": "1.4.1",
     "moment": "^2.14.1",
-    "page": "page.js#^1.7.1"
-  },
-  "resolutions": {
-    "q": "1.4.1"
+    "page": "page.js#^1.7.1",
+    "lodash": "^4.15.0"
   }
 }
