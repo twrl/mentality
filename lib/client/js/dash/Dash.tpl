@@ -18,7 +18,7 @@
             <h6>Clinical</h6>
             <div class="row">
                 <div rv-each-item="clinical" class="col s6 m4 l2">
-                    <div rv-data-target="item.location" class="card red darken-3">
+                    <div rv-data-target="item.location" class="card orange lighten-2">
                         <div class="card-content white-text">
                             { item.title }
                         </div>
