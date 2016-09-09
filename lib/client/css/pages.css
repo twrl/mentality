@@ -37,3 +37,7 @@ body {
 healthcontacts-card > .card {
     min-height: 208px;
 }
+
+h6 {
+    font-weight: bold;
+}

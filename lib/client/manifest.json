@@ -2,7 +2,7 @@
     "name": "Mentality",
     "short_name": "Mentality",
     "start_url": "/index.html",
-    "display": "standalone",
+    "display": "fullscreen",
     "background_color": "#4CAF50",
     "theme_color": "#4CAF50",
     "icons": [

@@ -3,7 +3,7 @@
             <h6>Self-management</h6>
             <div class="row">
                 <div rv-each-item="selfmanage" class="col s6 m4 l2">
-                    <div rv-data-target="item.location" class="card red darken-3">
+                    <div rv-data-target="item.location" class="card blue lighten-1">
                         <div class="card-content white-text">
                             { item.title }
                         </div>
@@ -33,7 +33,7 @@
             <h6>Self-help</h6>
             <div class="row">
                 <div rv-each-item="selfhelp" class="col s6 m4 l2">
-                    <div rv-data-target="item.location" class="card red darken-3">
+                    <div rv-data-target="item.location" class="card green">
                         <div class="card-content white-text">
                             { item.title }
                         </div>
