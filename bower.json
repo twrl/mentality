@@ -20,12 +20,14 @@
     "dexie": "^1.4.1",
     "materialize": "^0.97.7",
     "rivets": "^0.9.4",
-    "system.js": "^0.19.37",
     "font-awesome": "^4.6.3",
     "sw-toolbox": "^3.2.1",
     "q": "1.4.1",
     "moment": "^2.14.1",
     "lodash": "^4.15.0",
-    "url-pattern": "^1.0.1"
+    "url-pattern": "^1.0.1",
+    "requirejs": "^2.3.1",
+    "domReady": "^2.0.1",
+    "text": "^2.0.15"
   }
 }

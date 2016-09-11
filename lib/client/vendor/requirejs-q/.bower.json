@@ -1,0 +1,26 @@
+{
+  "name": "requirejs-q",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "q": "latest",
+    "requirejs": "latest"
+  },
+  "homepage": "https://github.com/asengupta/requirejs-q",
+  "_release": "e555795cfa",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e555795cfa9a29813bad63d65ca406217b0b94d7"
+  },
+  "_source": "https://github.com/asengupta/requirejs-q.git",
+  "_target": "*",
+  "_originalSource": "requirejs-q",
+  "_direct": true
+}

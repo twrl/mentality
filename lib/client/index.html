@@ -12,22 +12,14 @@
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" href="vendor/materialize/dist/css/materialize.css" />
     <link rel="stylesheet" href="css/pages.css"/>
-
-    <script src="vendor/q/q.js"></script>
-    <script src="vendor/system.js/dist/system.js"></script>
-    <script src="js/system.config.js"></script>
+    
     <script>
-        /*global navigator*/
-        navigator.serviceWorker.register("/services.js");
-        System.import("materialize");
-        
-        System.import("app.js");
-
-        System.import("prepopulate.js");
-
-        
-        
+        if (!!window.navigator.serviceWorker) {
+            window.navigator.serviceWorker.register("/services.js");
+        }
     </script>
+    <script src="js/require.config.js"></script>
+    <script src="js/vendor/requirejs/require.js" data-main="application"></script>
     <style>
         html {
             font-family: "Pontano Sans", "Roboto", sans-serif;
