@@ -1,0 +1,34 @@
+{
+  "name": "alameda",
+  "version": "1.1.0",
+  "ignore": [
+    ".gitignore",
+    ".npmignore",
+    "node_modules",
+    "package.json",
+    "README.md",
+    "tests",
+    "tests-requirejs",
+    "copyrequirejstests.sh",
+    "testBaseUrl.js"
+  ],
+  "homepage": "https://github.com/requirejs/alameda",
+  "authors": [
+    "jrburke.com"
+  ],
+  "description": "AMD loader, like requirejs, but with promises and for modern browsers",
+  "main": "alameda.js",
+  "license": [
+    "MIT"
+  ],
+  "_release": "1.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.1.0",
+    "commit": "cd3a085d9ad35ca5c0efcf15ceee994684e044cf"
+  },
+  "_source": "https://github.com/requirejs/alameda.git",
+  "_target": "^1.1.0",
+  "_originalSource": "alameda",
+  "_direct": true
+}

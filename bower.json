@@ -28,6 +28,9 @@
     "url-pattern": "^1.0.1",
     "requirejs": "^2.3.1",
     "domReady": "^2.0.1",
-    "text": "^2.0.15"
+    "text": "^2.0.15",
+    "almond": "^0.3.3",
+    "alameda": "^1.1.0",
+    "zepto": "^1.1.6"
   }
 }
