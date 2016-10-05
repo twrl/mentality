@@ -124,6 +124,6 @@ module.exports = (grunt) ->
     grunt.registerTask 'scripts', ['coffee:build']
     grunt.registerTask 'build', ['clean:www', 'copy:www', 'scripts']
 
-    grunt.registerTask 'debugInBrowser', ['build', 'cordovacli:run_browser']
+    grunt.registerTask 'debugInBrowser', 'Builds the Cordova app for the browser and opens it', ['build', 'cordovacli:run_browser']
 
     grunt.registerTask 'prepare', 'Prepares the cordova app for building', ['cordovacli:add_platforms', 'cordovacli:add_plugins']
